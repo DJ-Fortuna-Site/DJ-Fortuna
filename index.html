@@ -1,87 +1,126 @@
 <!DOCTYPE html>
-font-size: 1.2rem;
-color: #aaa;
-}
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>DJ Fortuna</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <style>
+    :root {
+      --primary: #7c4dff;
+      --dark: #0f1020;
+      --light: #ffffff;
+      --muted: #bdbddb;
+    }
 
-@media (max-width: 768px) {
-.about {
-grid-template-columns: 1fr;
-}
-header h1 {
-font-size: 2.6rem;
-}
-header p {
-font-size: 1.4rem;
-}
-}
-header h1 {
-font-size: 2.6rem;
-}
-header p {
-font-size: 1.3rem;
-}
-}
-header h1 {
-font-size: 2.2rem;
-}
-}
-</style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--dark);
+      color: var(--light);
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 40px;
+      background: rgba(15,16,32,0.7);
+      backdrop-filter: blur(6px);
+      z-index: 10;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: white;
+    }
+
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+        url("./dj-fortuna.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      padding: 120px 40px 40px;
+    }
+
+    .hero h2 {
+      font-size: 52px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 80px 40px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    footer {
+      background: #0a0b18;
+      padding: 30px;
+      text-align: center;
+      color: var(--muted);
+    }
+  </style>
 </head>
+
 <body>
 
-
 <header>
-<div style="background:#161616; padding:40px; border-radius:16px; max-width:900px; box-shadow:0 0 30px rgba(0,0,0,0.6);">
-<img src="dj.jpg" alt="DJ Fortuna" style="width:280px; max-width:100%; border-radius:12px; margin-bottom:30px;" />
-<h1>DJ FORTUNA</h1>
-<p>DJ profissional para festas, eventos privados, casamentos e animação musical de excelência.</p>
-<a href="#contactos" class="btn">Pedir Orçamento</a>
-</div>
+  <h1>DJ Fortuna</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Sobre</a>
+    <a href="#">Música</a>
+    <a href="#">Contacto</a>
+  </nav>
 </header>
 
+<section class="hero">
+  <div>
+    <h2>DJ Fortuna</h2>
+    <p>Música para festas, eventos e pistas cheias de energia.</p>
+    <a class="btn" href="#">Reservar Agora</a>
+  </div>
+</section>
 
 <section>
-<h2>Serviços</h2>
-<div class="services">
-<div class="service">
-<h3>Festas Privadas</h3>
-<p>Animação musical para aniversários, festas temáticas e celebrações especiais.</p>
-</div>
-<div class="service">
-<h3>Casamentos</h3>
-<p>Música personalizada para cerimónia, copo de água e pista de dança.</p>
-</div>
-<div class="service">
-<h3>Eventos Empresariais</h3>
-<p>Som ambiente, festas corporativas e eventos institucionais.</p>
-</div>
-</div>
+  <h3>Sobre Mim</h3>
+  <p>Sou o DJ Fortuna, com experiência em eventos privados e pistas de dança.</p>
 </section>
-
-
-<section>
-<h2>Sobre Mim</h2>
-<div class="about">
-<p>Sou DJ com experiência em vários tipos de eventos, focado em criar ambientes únicos e memoráveis. Trabalho com equipamento profissional e adapto o repertório ao público e ao tipo de evento.</p>
-</div>
-</section>
-
-
-<section id="contactos">
-<h2>Contactos</h2>
-<div class="contact">
-<p><strong>Telefone:</strong> 9XXXXXXXX</p>
-<p><strong>Email:</strong> djfortuna@email.com</p>
-<p><strong>Redes Sociais:</strong> Facebook | Instagram</p>
-</div>
-</section>
-
 
 <footer>
-<p>© 2025 DJ Fortuna. Todos os direitos reservados.</p>
+  © 2025 DJ Fortuna
 </footer>
-
 
 </body>
 </html>

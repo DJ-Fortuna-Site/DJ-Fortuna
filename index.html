@@ -6,17 +6,30 @@
 <title>DJ Fortuna</title>
 
 <style>
-/* ------------------- BASE ------------------- */
-* { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background:#0c0c0c;
-    color:white;
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#000;
+    color:#fff;
 }
 
-/* ------------------- HERO ------------------- */
-.hero {
+/* ---------- NAV ---------- */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    padding:15px 40px;
+    z-index:20;
+}
+nav a{color:#fff;margin-left:20px;text-decoration:none;transition:.3s}
+nav a:hover{color:#7a4cff}
+.logo{font-size:1.4rem;font-weight:bold}
+
+/* ---------- HERO ---------- */
+.hero{
     height:100vh;
     background:url('dj-fortuna.jpg') center/cover no-repeat;
     position:relative;
@@ -25,147 +38,132 @@ body {
     justify-content:center;
 }
 
-.overlay {
+.overlay{
     position:absolute;
-    top:0; left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.6);
+    inset:0;
+    background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8));
 }
 
-.hero-content {
+/* luzes animadas tipo discoteca */
+.lights{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+}
+.light{
+    position:absolute;
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    filter:blur(80px);
+    opacity:.6;
+    animation:move 6s infinite linear;
+}
+.light:nth-child(1){background:#ff00ff;top:10%;left:20%}
+.light:nth-child(2){background:#00ffea;top:60%;left:70%;animation-delay:1s}
+.light:nth-child(3){background:#ffff00;top:30%;left:40%;animation-delay:2s}
+
+@keyframes move{
+    from{transform:translateY(-50px)}
+    to{transform:translateY(50px)}
+}
+
+.hero-content{
     position:relative;
     text-align:center;
     max-width:900px;
-    padding:30px;
+    padding:35px;
     border-radius:25px;
-    backdrop-filter: blur(10px);
-    background: rgba(255,255,255,0.1);
-    animation: fadeIn 1.5s ease;
+    backdrop-filter:blur(10px);
+    background:rgba(255,255,255,.08);
+    animation:fadeIn 1.5s ease;
 }
+.hero h1{font-size:4rem}
+.hero p{font-size:1.2rem;margin:10px 0 20px}
 
-.hero h1 {
-    font-size:4rem;
-    margin-bottom:10px;
-}
-
-.hero p {
-    font-size:1.35rem;
-    opacity:0.9;
-    margin-bottom:20px;
-}
-
-.btn {
+.btn{
     padding:14px 35px;
     border-radius:30px;
     border:none;
-    font-size:1.1rem;
     cursor:pointer;
+    font-size:1.1rem;
     background:#7a4cff;
-    color:white;
-    transition:0.3s;
+    color:#fff;
+    transition:.3s;
 }
+.btn:hover{background:#532ccc;transform:scale(1.05)}
 
-.btn:hover { background:#532ccc; transform:scale(1.05); }
+section{padding:80px 10%;text-align:center}
+h2{font-size:2.6rem;margin-bottom:10px}
+.text{max-width:900px;margin:auto;font-size:1.15rem;opacity:.9}
 
-/* ------------------- NAV ------------------- */
-nav {
-    width:100%;
-    position:fixed;
-    top:0;
-    display:flex;
-    justify-content:space-between;
-    padding:15px 40px;
-    z-index:10;
-}
-
-.logo {
-    font-size:1.5rem;
-    font-weight:bold;
-}
-
-nav a {
-    margin-left:20px;
-    text-decoration:none;
-    color:white;
-    font-size:1rem;
-    transition:0.3s;
-}
-
-nav a:hover { color:#7a4cff; }
-
-/* ------------------- SECTIONS ------------------- */
-section {
-    padding:80px 10%;
-    text-align:center;
-}
-
-h2 {
-    font-size:2.8rem;
-    margin-bottom:20px;
-}
-
-.text {
-    max-width:900px;
-    margin:auto;
-    font-size:1.2rem;
-    opacity:0.9;
-}
-
-/* ----------- SERVICES CARDS ------------ */
-.services {
+/* ---------- SERVICES ---------- */
+.services{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
     margin-top:40px;
 }
-
-.card {
-    background:#141414;
-    padding:30px;
-    border-radius:20px;
-    border:1px solid rgba(255,255,255,0.1);
-    transition:0.3s;
+.card{
+    background:#121212;
+    padding:35px;
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,.1);
+    transition:.3s;
 }
+.card:hover{transform:translateY(-6px);border-color:#7a4cff}
 
-.card:hover {
-    transform:translateY(-5px);
-    border-color:#7a4cff;
-}
-
-/* ------------------- CONTACT ------------------- */
-.contact-box {
+/* ---------- PLAYER ---------- */
+.player-box{
     margin-top:30px;
-    background:#141414;
-    padding:40px;
-    border-radius:20px;
+    background:#111;
+    padding:25px;
+    border-radius:15px;
     display:inline-block;
+    border:1px solid rgba(255,255,255,.1);
 }
 
-/* ------------------- FOOTER ------------------- */
-footer {
+/* ---------- CONTACT ---------- */
+form{
+    max-width:500px;
+    margin:30px auto;
+    display:grid;
+    gap:15px;
+}
+input,textarea{
+    padding:12px;
+    border-radius:8px;
+    border:none;
+    outline:none;
+    background:#1a1a1a;
+    color:#fff;
+}
+textarea{min-height:130px;resize:none}
+
+/* ---------- FOOTER ---------- */
+footer{
     padding:25px;
     text-align:center;
     background:#000;
-    opacity:0.9;
+    opacity:.9;
+    margin-top:40px;
 }
 
-/* ------------------- ANIM ------------------- */
-@keyframes fadeIn {
-    from {opacity:0; transform: translateY(30px);}
-    to {opacity:1; transform: translateY(0);}
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(40px)}
+    to{opacity:1;transform:translateY(0)}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
     <div class="logo">DJ Fortuna</div>
     <div>
         <a href="#about">Sobre</a>
         <a href="#services">Serviços</a>
+        <a href="#music">Música</a>
         <a href="#contact">Contacto</a>
     </div>
 </nav>
@@ -174,52 +172,71 @@ footer {
 <section class="hero">
 <div class="overlay"></div>
 
+<div class="lights">
+    <div class="light"></div>
+    <div class="light"></div>
+    <div class="light"></div>
+</div>
+
 <div class="hero-content">
     <h1>DJ Fortuna</h1>
-    <p>Música profissional para festas, eventos, casamentos e pistas cheias de energia.</p>
+    <p>Energia, ritmo e experiências musicais inesquecíveis.</p>
     <a href="#contact"><button class="btn">Reservar Agora</button></a>
 </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
 <h2>Sobre Mim</h2>
 <p class="text">
-Experiência, boa energia e a mistura certa para manter a pista sempre cheia.
-O foco é criar um ambiente inesquecível para cada evento.
+Profissional dedicado a transformar eventos em experiências marcantes.
+Repertório versátil, equipamento de alta qualidade e energia constante na pista.
 </p>
 </section>
 
-<!-- SERVICES -->
 <section id="services">
 <h2>Serviços</h2>
 <div class="services">
     <div class="card">
         <h3>Casamentos</h3>
-        <p>Playlist personalizada, ambiente elegante e animação garantida.</p>
+        <p>Momentos únicos com trilha sonora perfeita.</p>
     </div>
-
     <div class="card">
         <h3>Festas Privadas</h3>
-        <p>Festivais em casa, aniversários e celebrações com muita energia.</p>
+        <p>Aniversários, eventos VIP e celebrações com grande animação.</p>
     </div>
-
     <div class="card">
         <h3>Eventos Corporativos</h3>
-        <p>Som profissional, imagem de marca e ambiente premium.</p>
+        <p>Ambiente premium e identidade musical alinhada à marca.</p>
     </div>
 </div>
+</section>
+
+<!-- MUSIC PLAYER -->
+<section id="music">
+<h2>Música</h2>
+<p class="text">Ouça um exemplo do ambiente musical que levo para os eventos.</p>
+
+<div class="player-box">
+    <audio controls>
+        <source src="sample.mp3" type="audio/mpeg">
+        O seu navegador não suporta player de áudio.
+    </audio>
+</div>
+<p style="opacity:.7;margin-top:8px">Substitua “sample.mp3” pelo seu ficheiro.</p>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
 <h2>Contacto</h2>
+<p class="text">Solicite orçamento ou disponibilidade.</p>
 
-<div class="contact-box">
-    <p>Email: <b>contact@djfortuna.com</b></p>
-    <p>Ou clique no botão abaixo:</p>
-    <a href="mailto:contact@djfortuna.com"><button class="btn">Enviar Email</button></a>
-</div>
+<form action="mailto:contact@djfortuna.com" method="post" enctype="text/plain">
+    <input type="text" name="Nome" placeholder="O seu nome" required>
+    <input type="email" name="Email" placeholder="O seu email" required>
+    <textarea name="Mensagem" placeholder="Descreva o evento" required></textarea>
+    <button class="btn" type="submit">Enviar Mensagem</button>
+</form>
+
 </section>
 
 <footer>

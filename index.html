@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DJ Fortuna</title>
+
+<style>
+/* ------------------- BASE ------------------- */
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:#0c0c0c;
+    color:white;
+}
+
+/* ------------------- HERO ------------------- */
+.hero {
+    height:100vh;
+    background:url('dj-fortuna.jpg') center/cover no-repeat;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.overlay {
+    position:absolute;
+    top:0; left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+}
+
+.hero-content {
+    position:relative;
+    text-align:center;
+    max-width:900px;
+    padding:30px;
+    border-radius:25px;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.1);
+    animation: fadeIn 1.5s ease;
+}
+
+.hero h1 {
+    font-size:4rem;
+    margin-bottom:10px;
+}
+
+.hero p {
+    font-size:1.35rem;
+    opacity:0.9;
+    margin-bottom:20px;
+}
+
+.btn {
+    padding:14px 35px;
+    border-radius:30px;
+    border:none;
+    font-size:1.1rem;
+    cursor:pointer;
+    background:#7a4cff;
+    color:white;
+    transition:0.3s;
+}
+
+.btn:hover { background:#532ccc; transform:scale(1.05); }
+
+/* ------------------- NAV ------------------- */
+nav {
+    width:100%;
+    position:fixed;
+    top:0;
+    display:flex;
+    justify-content:space-between;
+    padding:15px 40px;
+    z-index:10;
+}
+
+.logo {
+    font-size:1.5rem;
+    font-weight:bold;
+}
+
+nav a {
+    margin-left:20px;
+    text-decoration:none;
+    color:white;
+    font-size:1rem;
+    transition:0.3s;
+}
+
+nav a:hover { color:#7a4cff; }
+
+/* ------------------- SECTIONS ------------------- */
+section {
+    padding:80px 10%;
+    text-align:center;
+}
+
+h2 {
+    font-size:2.8rem;
+    margin-bottom:20px;
+}
+
+.text {
+    max-width:900px;
+    margin:auto;
+    font-size:1.2rem;
+    opacity:0.9;
+}
+
+/* ----------- SERVICES CARDS ------------ */
+.services {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-top:40px;
+}
+
+.card {
+    background:#141414;
+    padding:30px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,0.1);
+    transition:0.3s;
+}
+
+.card:hover {
+    transform:translateY(-5px);
+    border-color:#7a4cff;
+}
+
+/* ------------------- CONTACT ------------------- */
+.contact-box {
+    margin-top:30px;
+    background:#141414;
+    padding:40px;
+    border-radius:20px;
+    display:inline-block;
+}
+
+/* ------------------- FOOTER ------------------- */
+footer {
+    padding:25px;
+    text-align:center;
+    background:#000;
+    opacity:0.9;
+}
+
+/* ------------------- ANIM ------------------- */
+@keyframes fadeIn {
+    from {opacity:0; transform: translateY(30px);}
+    to {opacity:1; transform: translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="logo">DJ Fortuna</div>
+    <div>
+        <a href="#about">Sobre</a>
+        <a href="#services">Serviços</a>
+        <a href="#contact">Contacto</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="overlay"></div>
+
+<div class="hero-content">
+    <h1>DJ Fortuna</h1>
+    <p>Música profissional para festas, eventos, casamentos e pistas cheias de energia.
